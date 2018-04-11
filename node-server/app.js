@@ -7,7 +7,8 @@ const port = process.env.PORT || 5000;
 app.get('/menu', function(req, res) {
   token = process.env.ACCESS_TOKEN
   request("https://api.flypaythis.com/v2/location/92/menu?accessToken=" + token, function(error, response, body) {
-    res.send(JSON.parse(body))
+    data = JSON.parse(body)
+    res.send(data.menus)
   })
 })
 
