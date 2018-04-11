@@ -8,10 +8,14 @@
     "express": "^4.16.3",
     "request": "^2.85.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "client": "cd .. && cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "author": "",
   "license": "ISC"
