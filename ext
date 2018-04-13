@@ -1,0 +1,29 @@
+// <Category name= {this.state.response[0]["categories"].find(item => item.name = "Pre Burger")} />
+// <Category name= {this.state.response[0]["categories"].find(item => item.name = "Beef")} />
+
+
+import React, { Component } from 'react';
+import Menu from './Menu';
+import './App.css';
+
+class App extends Component {
+
+render() {
+    return (
+        <div className="App">
+            <Menu />
+        </div>
+    );
+  }
+}
+
+export default App;
+
+render() {
+  return(
+    <div>
+    {this.getCategory("Pre Burger")}
+    </div>
+  )
+  }
+}
