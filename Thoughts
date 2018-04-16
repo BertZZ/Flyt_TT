@@ -1,15 +1,12 @@
-// <Category name= {this.state.response[0]["categories"].find(item => item.name = "Pre Burger")} />
-// <Category name= {this.state.response[0]["categories"].find(item => item.name = "Beef")} />
 
-
-
-getCategory(category)
-  this.state.response.find(item => item.name = category)
-render() {
-  return(
-    <div>
-    {this.getCategory("Pre Burger")}
-    </div>
-  )
-  }
+componentDidMount() {
+  this.callApi()
+    .then(res => this.setState({ response: JSON.stringify(res[0]["categories"].find(item => item.name = "Pre Burger"))}))
+    .catch(err => console.log(err));
 }
+
+If the above code sets the state to only Pre-Burger why does this not achieve the same thing and throws an error:
+
+<Category {this.state.response.find(item => item.name = "Pre Burger")} />
+
+This is the question that has impeeded my progress with this tech test and unfortunatly I have been unable to find a solution,
