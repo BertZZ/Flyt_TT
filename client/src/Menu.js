@@ -24,16 +24,23 @@ class Menu extends Component {
     return body;
   };
 
-  getCategory(category){
-    var cat = this.state.response.find(item => item.name = category)
-    return cat
-  }
-
 render() {
-  var pre = this.getCategory("Pre Burger");
     return(
       <div>
-      <p> {pre} </p>
+        <Category data = { this.state.response.find(item => item.name = "Pre Burger") }/>
+        <Category data = { this.state.response.find(item => item.name = "Beef") }/>
+        <Category data = { this.state.response.find(item => item.name = "Chicken") }/>
+        <Category data = { this.state.response.find(item => item.name = "Veggie") }/>
+        <Category data = { this.state.response.find(item => item.name = "Speciality") }/>
+        <Category data = { this.state.response.find(item => item.name = "Salads") }/>
+        <Category data = { this.state.response.find(item => item.name = "Fries & Sides") }/>
+        <Category data = { this.state.response.find(item => item.name = "Sauces") }/>
+        <Category data = { this.state.response.find(item => item.name = "Milkshakes") }/>
+        <Category data = { this.state.response.find(item => item.name = "Fresh & Fizzy") }/>
+        <Category data = { this.state.response.find(item => item.name = "Soft Drinks") }/>
+        <Category data = { this.state.response.find(item => item.name = "Gluten Free") }/>
+        <Category data = { this.state.response.find(item => item.name = "Beer & Cider") }/>
+        <Category data = { this.state.response.find(item => item.name = "Wine") }/>
       </div>
     )
   }
